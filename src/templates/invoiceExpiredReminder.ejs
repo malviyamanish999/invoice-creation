@@ -1,0 +1,88 @@
+<style type="text/css">
+  .header {
+    background: #8a8a8a;
+  }
+
+  .header .columns {
+    padding-bottom: 0;
+  }
+
+  .header p {
+    color: #fff;
+    padding-top: 15px;
+  }
+
+  .header .wrapper-inner {
+    padding: 20px;
+  }
+
+  .header .container {
+    background: transparent;
+  }
+
+  table.button.facebook table td {
+    background: #3B5998 !important;
+    border-color: #3B5998;
+  }
+
+  table.button.twitter table td {
+    background: #1daced !important;
+    border-color: #1daced;
+  }
+
+  table.button.google table td {
+    background: #DB4A39 !important;
+    border-color: #DB4A39;
+  }
+
+  .wrapper.secondary {
+    background: #f3f3f3;
+  }
+</style>
+
+<container>
+  <spacer size="16"></spacer>
+  <row>
+    <columns small="12">
+      <h4>Subject: Reminder: Expired Invoice Plan for <%= result.customer.company_name %>
+      </h4>
+      <h5>Dear <%= result.customer.company_name %>,</h5>
+      <p>
+        We hope this email finds you well. We wanted to bring to your attention that the invoice plan for your account
+        with us has expired.
+
+      </p>
+      <h5>Plan Details:</h5>
+      <p>
+        Plan Name: <%= result.subcription_plan.type %> <br>
+        Plan Expiration Date: <%= result.license_end_date %> <br>
+        Due Date: <%= result.license_start_date %> <br>
+        Total Amount: <%= result.receivable_amount %> <br>
+      </p>
+      <p>
+        We value your business and want to ensure that you continue to receive uninterrupted service.
+      </p>
+      <p>
+        If you have any questions or need assistance in selecting the most suitable plan, please don't hesitate to reach
+        out to our support team.
+      </p>
+      <p>
+        Please note that failure to renew your invoice plan may result in service suspension or the inability to access
+        certain features.
+      </p>
+      <p>
+        We recommend taking prompt action to avoid any inconvenience.
+      </p>
+      <p>
+        Thank you for your prompt attention to this matter. We greatly appreciate your continued support.
+      </p>
+      <p>
+        Thanks & Regards,<br>
+        Simran Jain | Business Development Manager<br>
+        TaskOPad Solutions Private Limited<br>
+        Website: www.taskopad.com<br>
+        Phone: +919898593359
+      </p>
+    </columns>
+  </row>
+</container>

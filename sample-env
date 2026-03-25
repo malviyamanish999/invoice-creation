@@ -1,0 +1,34 @@
+NODE_ENV=development
+
+# Server Environment
+PORT=3000
+
+# Dev Database
+DBHOST=dev-database-kena-wellness.c1ns9lkz40go.eu-west-2.rds.amazonaws.com
+DATABASE=kena_dev
+DBUSER=dev
+DBPASSWORD=GzpRLYX4FShY2b7m
+
+
+JWT_SECRET=p$!@2#T*&N)
+JWT_EXPIRY_TIME=1h
+JWT_FORGOT_PASSWORD_EXPIRY_TIME=15m
+
+TASKOPAD_BFF_URL=
+TASKOPAD_AUTH_TOKEN=
+TASKOPAD_SECRET_KEY=
+
+# SMTP
+SMTP_USER_NAME=6533b8bc618c5a
+SMTP_PASSWORD=1de5b4efe6fa4b
+SMTP_HOST=smtp.mailtrap.io
+SMTP_PORT=2525
+DEFAULT_FROM =hiro.jaisinghani@solutionanalysts.com
+DEFAULT_REPLY_TO =hiro.jaisinghani@solutionanalysts.com
+
+WEBHOOK_EVENT=payment_link.paid
+
+DB_MAX_CONNECTION_LIMIT = 10
+DB_IDLE_CONNECTION_LIMIT = 10000
+
+CODE_EXPIRY_TIME =30

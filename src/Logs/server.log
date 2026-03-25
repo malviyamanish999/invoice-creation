@@ -1,0 +1,16 @@
+[32minfo[39m: server is listening on this port: 9000 {"timestamp":"2023-06-02 12:13:10"}
+[32minfo[39m:  [2023-06-02 12:13:12 ] : [6321b961-9ad6-4bc8-88ce-fb8059fa3976] : [PROCESS] : [LOG-TYPE (PROCESS)] :  [http://localhost:9000] {"timestamp":"2023-06-02 12:13:10"}
+[32minfo[39m: server is listening on this port: 9000 {"timestamp":"2023-06-02 12:13:21"}
+[32minfo[39m:  [2023-06-02 12:13:22 ] : [763f93c3-06e7-46b4-8cad-617710dc5f2e] : [PROCESS] : [LOG-TYPE (PROCESS)] :  [http://localhost:9000] {"timestamp":"2023-06-02 12:13:21"}
+[32minfo[39m: server is listening on this port: 9000 {"timestamp":"2023-06-02 12:13:31"}
+[32minfo[39m:  [2023-06-02 12:13:32 ] : [091a3104-0c6d-430c-a493-c2476aedd4e8] : [PROCESS] : [LOG-TYPE (PROCESS)] :  [http://localhost:9000] {"timestamp":"2023-06-02 12:13:31"}
+[32minfo[39m: server is listening on this port: 9000 {"timestamp":"2023-06-02 12:13:38"}
+[32minfo[39m:  [2023-06-02 12:13:39 ] : [6f0eef63-2c6d-42b6-9470-5be7c1cb39c1] : [PROCESS] : [LOG-TYPE (PROCESS)] :  [http://localhost:9000] {"timestamp":"2023-06-02 12:13:38"}
+[32minfo[39m: server is listening on this port: 9000 {"timestamp":"2023-06-02 12:13:46"}
+[32minfo[39m:  [2023-06-02 12:13:47 ] : [02131d86-3640-4ca9-8179-5911aa99246b] : [PROCESS] : [LOG-TYPE (PROCESS)] :  [http://localhost:9000] {"timestamp":"2023-06-02 12:13:46"}
+[32minfo[39m: server is listening on this port: 9000 {"timestamp":"2023-06-02 12:13:55"}
+[32minfo[39m:  [2023-06-02 12:13:57 ] : [bb589d9c-6371-45d3-84f1-9b72e49693ff] : [PROCESS] : [LOG-TYPE (PROCESS)] :  [http://localhost:9000] {"timestamp":"2023-06-02 12:13:55"}
+[32minfo[39m: server is listening on this port: 9000 {"timestamp":"2023-06-02 12:14:10"}
+[32minfo[39m:  [2023-06-02 12:14:11 ] : [190df264-1d1c-4858-9c06-36140f2065f6] : [PROCESS] : [LOG-TYPE (PROCESS)] :  [http://localhost:9000] {"timestamp":"2023-06-02 12:14:10"}
+[32minfo[39m: Connection has been established successfully. {"timestamp":"2023-06-02 12:14:10"}
+[32minfo[39m: Successfully Sync {"timestamp":"2023-06-02 12:14:10"}

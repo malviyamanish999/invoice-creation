@@ -1,0 +1,90 @@
+<style type="text/css">
+  .header {
+    background: #8a8a8a;
+  }
+
+  .header .columns {
+    padding-bottom: 0;
+  }
+
+  .header p {
+    color: #fff;
+    padding-top: 15px;
+  }
+
+  .header .wrapper-inner {
+    padding: 20px;
+  }
+
+  .header .container {
+    background: transparent;
+  }
+
+  table.button.facebook table td {
+    background: #3B5998 !important;
+    border-color: #3B5998;
+  }
+
+  table.button.twitter table td {
+    background: #1daced !important;
+    border-color: #1daced;
+  }
+
+  table.button.google table td {
+    background: #DB4A39 !important;
+    border-color: #DB4A39;
+  }
+
+  .wrapper.secondary {
+    background: #f3f3f3;
+  }
+</style>
+
+<container>
+  <spacer size="16"></spacer>
+  <row>
+    <columns small="12">
+      <h4>Subject: Quotation <%= result.invoice_no %>
+      </h4>
+      <h5>Dear <%= result.customer.company_name %>,</h5>
+      <p>
+        I hope you are doing great!.
+      </p>
+      <p>
+        I, Simran Jain , the Business Development Manager at TaskOPad Solutions Private Limited attaching Quotation of TaskOPad. Kindly have a look at it, and a gist of which is provided below. We are happy to have you as our prominent client.
+      </p>
+      <h5>Quotation Details:</h5>
+      <p>
+        Quotation Number: <%= result.quotation_no %> <br>
+        Quotation Date: <%= result.license_start_date %> <br>
+        <!-- Due Date: <%= result.license_start_date %> <br> -->
+        Total Amount: <%= result.receivable_amount %> <br>
+      </p>
+      <p>
+        We have carefully prepared this quotation based on your requirements, and it is valid until <%= result.validate_for %>.
+      </p>
+      <p>
+        Please review the attached document and let us know if you have any questions or need further clarification.
+      </p>
+      <p>We appreciate your interest in our products/services, and we believe this quotation aligns with your needs.
+      </p>
+      <p>
+        If you would like to proceed with the order, kindly let us know, and we will be happy to assist you further.
+      </p>
+      <p>
+        lease do not hesitate to contact us if you require any additional information or if there's anything else we can
+        assist you with.
+      </p>
+      <p>
+        Thank you for considering our products/services. We look forward to the opportunity of working with you.
+      </p>
+      <p>
+        Thanks & Regards,<br>
+        Simran Jain | Business Development Manager<br>
+        TaskOPad Solutions Private Limited<br>
+        Website: www.taskopad.com<br>
+        Phone: +919898593359
+      </p>
+    </columns>
+  </row>
+</container>

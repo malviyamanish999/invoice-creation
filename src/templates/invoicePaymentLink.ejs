@@ -1,0 +1,69 @@
+<style type="text/css">
+    .header {
+      background: #8a8a8a;
+    }
+    .header .columns {
+      padding-bottom: 0;
+    }
+    .header p {
+      color: #fff;
+      padding-top: 15px;
+    }
+    .header .wrapper-inner {
+      padding: 20px;
+    }
+    .header .container {
+      background: transparent;
+    }
+    table.button.facebook table td {
+      background: #3B5998 !important;
+      border-color: #3B5998;
+    }
+    table.button.twitter table td {
+      background: #1daced !important;
+      border-color: #1daced;
+    }
+    table.button.google table td {
+      background: #DB4A39 !important;
+      border-color: #DB4A39;
+    }
+    .wrapper.secondary {
+      background: #f3f3f3;
+    }
+  </style>
+  
+  <container>
+    <spacer size="16"></spacer>
+    <row>
+      <columns small="12">
+        <h4>Subject: Requested Invoice and Payment Link </h4>
+        <h5>Dear <%= test.customer.name %>,</h5>
+        <p>
+            Thank you for reaching out to us and expressing interest in TaskOPad – A leading Task & Project Management Software. We appreciate the opportunity to provide you with a quotation. We have carefully reviewed your requirements and prepared a detailed quotation to meet your needs.
+        </p>  
+        <p>
+            Attached to this email, you will find the quotation document that includes a breakdown of costs, descriptions, and relevant terms and conditions. We believe our pricing is competitive and offers excellent value for your investment.
+        </p>  
+        <p>
+            To proceed with the order and make the payment, we have included a convenient payment link for your ease of use. Simply click on the payment link provided below, and it will direct you to our secure payment portal. You can choose from multiple payment options to complete the transaction securely and efficiently.
+        </p> 
+        <h3>Payment link:- <%= test.short_url%></h3>
+        <p>
+            Also you can select Bank Transfer as the payment method, and the bank details required for the transaction are provided in the quotation.
+        </p>
+        <p>
+            If you have any questions or need further clarification regarding the quotation or the payment process, please feel free to contact our dedicated customer service team. We are here to assist you every step of the way.
+        </p>
+        <p>
+            We sincerely appreciate your consideration and look forward to serving you. Thank you for choosing TaskOPad.
+        </p>
+        <p>
+          Thanks & Regards,<br>
+          Simran Jain | Business Development Manager<br>
+          TaskOPad Solutions Private Limited<br>
+          Website: www.taskopad.com<br>
+          Phone: +919898593359
+        </p>
+      </columns>
+    </row>
+  </container>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invoice</title>
+  <style>
+    a {
+      color: #131212;
+      text-decoration: underline;
+    }
+
+    .new-account-cls-add {
+      float: left;
+      display: flex;
+      justify-content: flex-start;
+      color: #131212;
+      font-weight: 600;
+      font-size: 14px;
+      margin-right: auto;
+    }
+
+    .all-text-invoice-created {
+      color: #000000;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    body {
+      position: relative;
+      width: 28cm;
+      margin: 0 auto;
+      font-size: 14px;
+      background: #FFFFFF;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      /* margin-bottom: 20px; */
+      border: 1px solid #131212;
+    }
+
+    table th {
+      text-align: center;
+    }
+
+    table th {
+      padding: 0 5px;
+      height: 25px;
+      text-align: left;
+      color: #292D32;
+      font-weight: 700;
+      border: 1px solid #131212;
+      white-space: nowrap;
+      word-break: break-word;
+    }
+
+    td {
+      border: 1px solid #131212;
+    }
+
+    table td {
+      padding: 5px;
+      word-break: break-word;
+
+    }
+
+    table td.service,
+    table td.desc {
+      vertical-align: middle;
+    }
+
+    table td.unit,
+    table td.qty,
+    table td.total {
+      font-size: 1.2em;
+    }
+
+    table td.grand {
+      border-top: 1px solid #5D6975;
+    }
+
+    footer {
+      color: #5D6975;
+      width: 100%;
+      height: 30px;
+      position: absolute;
+      bottom: 0;
+      border-top: 1px solid #C1CED9;
+      padding: 8px 0;
+      text-align: center;
+    }
+
+    .left-side h1,
+    h3 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #292D32;
+      margin: 0;
+    }
+
+    .left-side {
+      float: left;
+      text-align: left;
+      margin: 0;
+      width: 50%;
+    }
+
+    .right-side {
+      float: right;
+      margin: 0;
+    }
+
+    .main-header-portion {
+      margin: 0;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+    }
+
+    .right-side h6 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #909090;
+      margin: 0;
+    }
+
+    .left-side address {
+      color: #909090;
+      line-height: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .right-side .amount {
+      font-weight: 600;
+      font-size: 14px;
+      color: #0f0f0f;
+    }
+
+    .portion-one-line {
+      display: flex;
+      align-items: center;
+    }
+
+    .gst-portion-same-cls p {
+      color: #292D32;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .gst-portion-same-cls span {
+      color: #181717;
+      font-weight: 400;
+      font-size: 16px;
+    }
+
+    /* .main-table-start:before {
+      content: '';
+      position: absolute;
+      display: block;
+      background: url(https://s3.ap-south-1.amazonaws.com/invoice-creation-assets/pdf/filesadd.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 28%;
+      height: 300px;
+      left: 39%;
+      right: 50%;
+      margin: 142px auto 0 auto;
+    } */
+
+    .main-table-start tbody tr {
+      border-bottom: 1px solid #444343;
+    }
+
+    .main-table-start tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .second-main-table tbody tr {
+      border-bottom: 1px solid #424344;
+    }
+
+    .second-main-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .main-table-start tbody tr td {
+      color: #131212;
+      font-weight: 400;
+    }
+
+    .rounding-number .counting {
+      color: #131212;
+      font-weight: 400;
+      font-size: 16px;
+      text-align: end;
+    }
+
+    .rounding-number .heading-rounding {
+      color: #131212;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .heading-notes {
+      font-weight: 700;
+    }
+
+    .left-side-licence {
+      color: #131212;
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    .for-all-color-one {
+      color: #131212 !important;
+    }
+
+    .gray-heading-cls {
+      color: #131212;
+      font-size: 14px;
+      font-weight: 400 !important;
+    }
+
+    .accounting-gray {
+      color: #131212;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 20px;
+      display: block;
+      font-style: normal;
+      line-height: 10px;
+    }
+
+    .right-side-border-add table thead tr th {
+      border-right: 1px solid #C9D6E6;
+    }
+
+    .right-side-border-add table td {
+      border-right: 1px solid #C9D6E6;
+    }
+
+    .border1Px {
+      border: 1px solid black;
+    }
+
+
+    .border2Px {
+      border: 2px solid black;
+    }
+
+    .gray-colo-cls {
+      color: #909090;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .payment-text h6 {
+      color: #131212;
+      font-weight: 700;
+      font-size: 21px;
+      margin: 0;
+    }
+
+    .same-class-paragraph {
+      color: #131212;
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    .bold-text-cls {
+      color: #131212;
+      font-size: 12px;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media only screen and (max-width: 1224px) {
+      body {
+        width: 18cm;
+      }
+
+      .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+      }
+
+      .left-side h1,
+      h3 {
+        font-size: 21px;
+      }
+
+      .main-table-start:before {
+        height: 190px;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      /* body {
+        width: 9cm;
+      } */
+
+      .main-table-start:before {
+        height: 97px;
+        margin: 150px 0 0 0;
+        top: initial;
+      }
+
+      .main-header-portion {
+        display: block;
+      }
+
+      .left-side {
+        float: inherit;
+        margin-top: 15%;
+        margin-bottom: 15%;
+      }
+
+      .right-side {
+        float: inherit;
+        margin-top: 23px;
+      }
+
+      .right-side .amount {
+        margin-top: 4px;
+      }
+
+      .tax-invoice {
+        color: #000;
+        font-family: Inter;
+        font-size: 11.925px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body style="font-family: sans-serif;">
+
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f4f4f4; border: 0px; width: 100%;">
+    <tr>
+      <td align="center" style="border: 0px; padding: 0;">
+        <!-- Container -->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%"
+          style="background-color: #ffffff;  border: 0px; margin: 0; width: 100%;">
+          <tr>
+            <td style="padding: 0px; border: 0px;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                style="border-collapse: collapse; border: 0px; width: 100%;">
+                <tr style="color: #000000; font-weight: bold;">
+                  <td align="left" style="border: 0px;"><img alt="logo" height="100" width="250"
+                      src="https://app.taskopad.com/assets/images/new-logo-cropped.svg"></td>
+                  <td align="right" style="border: 0px;">
+                    <%= result.id %>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align="center"
+              style="padding: 10px; color: #000000; font-size: 20px; padding-bottom: 25px; text-decoration: underline; border: 0;">
+              <strong> Tax Invoice</strong>
+            </td>
+          </tr>
+        </table>
+        <!-- End Container -->
+      </td>
+    </tr>
+  </table>
+  <div style="border: 2px solid black; ">
+
+    <table style="border: 0; width: 100%;" width="100%">
+      <thead>
+        <th style="border-left: 0; border-top: 0; width: 50%;" >
+          <strong>Taskopad Solutions Private Limited</strong>
+        </th>
+        <th style="border-right: 0; border-top: 0; width: 50%;" >
+          <strong><%= result.customer.company_name %></strong>
+        </th>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="border-left: 0;" valign="top">
+            <address style=" font-style: normal; font-size: 12px;">
+              408, 4th Floor, Binali Complex,<br>
+              AEC Cross Road, Naranpura,<br>
+              Ahmedabad.380013<br>
+              Gujarat
+            </address>
+          </td>
+          <td style="border-right: 0;" valign="top">
+            <address style="  color: #909090;
+          line-height: 16px;
+          font-size: 12px;
+          font-weight: 600; font-style: normal;">
+              <%= result.customer.address1 %>,<br>
+                <%= result.customer.address1 %> &nbsp; <%= result.customer.address2 %>,<br>
+                    <%= result.customer.city %> &nbsp;- <%= result.customer.pincode %>,<br>
+                        <%= result.customer.state %>
+            </address>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="padding: 0; border: 0;">
+            <table border="1" cellpadding="0" cellspacing="0" width="100%"
+            style="background-color: #ffffff;  border: 0px; margin: 0; width: 100%;">
+              <tbody>
+                <tr>
+                  <td style="border-left: 0; border-top: 0;" colspan="2">
+                    <p class="bold-text-cls">GST No. &nbsp;&nbsp;&nbsp;<span class="same-class-paragraph">
+                        24AAHCT9200H1ZG
+                      </span></p>
+                  </td>
+                  <td style="border-right: 0; border-top: 0;">
+                    <p class="bold-text-cls">GST No.</p>
+                  </td>
+                  <td style="border-right: 0; border-top: 0;">
+                    <p class="bold-text-cls"><span class="same-class-paragraph">
+                        <%= result.customer.gst_no %>
+                      </span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border-left: 0;" colspan="2">
+                    <p class="bold-text-cls">PAN No. : &nbsp;&nbsp;&nbsp;<span class="same-class-paragraph">
+                        AAHCT9200H
+                      </span></p>
+                  </td>
+                  <td style="border-right: 0;">
+                    <p class="bold-text-cls">State & State Code :</p>
+                  </td>
+                  <td style="border-right: 0;">
+                    <p class="bold-text-cls"><span class="same-class-paragraph">
+                        <%= result.customer.state %> - <%= isoCode %>
+                      </span></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border-left: 0;">
+                    <p class="bold-text-cls">Invoice Date. : &nbsp;&nbsp;&nbsp;</p>
+                  </td>
+                  <td style="border-left: 0;">
+                    <p class="bold-text-cls"><span class="same-class-paragraph">
+                        <%= result.invoice_date %>
+                      </span></p>
+                  </td>
+                  
+                  <td style="border-right: 0;">
+                    <p class="bold-text-cls">Invoice No. :</p>
+                  </td>
+                  <td style="border-right: 0;">
+                    <p class="bold-text-cls"><span class="same-class-paragraph">
+                        <%= result.invoice_no %>
+                      </span></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <div class="main-header-portion">
+      <div class="left-side">
+        <div class="gst-portion-same-cls">
+
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="gst-portion-same-cls">
+
+        </div>
+      </div>
+    </div>
+
+    <main class="body-portion-cls" style="margin-top: 25px;">
+      <div class="main-table-start">
+        <table class="table table-responsive" style="border: 0; width: 100%;" width="100%">
+          <thead>
+            <tr>
+              <!-- <th class="service">Sr. #</th> -->
+              <th class="desc" align="center" style="border-left: 0;">Sr. #</th>
+              <th class="desc">Description</th>
+              <th style="text-align: center;">Qty</th>
+              <th style="text-align: center;">Rate</th>
+              <th style="text-align: center;">Disc %</th>
+              <th align="right" style="text-align: center;border-right: 0;">Amount.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- <td class="service">1</td> -->
+              <td class="desc for-all-color-one" style="border-left: 0;" align="center">
+                1
+              </td>
+              <td class="desc for-all-color-one">
+                <%= result.description.description %>
+              </td>
+              <td class="qty for-all-color-one" style="text-align: center;">
+                <%= result.user %>
+              </td>
+              <td class="rate for-all-color-one" style="text-align: center;">
+                <%= result.subcription_plan.rate %>
+              </td>
+              <td class="disc for-all-color-one" style="text-align: center;">
+                <%= result.discount %>
+              </td>
+              <td class="total for-all-color-one" style="border-right: 0;" align="right">
+                <%= amount %>
+              </td>
+            </tr>
+            <tr>
+              <td class="desc for-all-color-one" style="border-left: 0;" align="center">
+                2
+              </td>
+              <!-- <td class="service">3</td> -->
+              <td class="desc for-all-color-one">CGST</td>
+              <td class="unit for-all-color-one" style="text-align: center;"></td>
+              <td class="qty for-all-color-one" style="text-align: center;"></td>
+              <td class="total for-all-color-one" style="text-align: center;"></td>
+              <td class="total for-all-color-one"  style="border-right: 0;"align="right">
+                <%= result.CGST %>
+              </td>
+            </tr>
+            <tr>
+              <td class="desc for-all-color-one" style="border-left: 0;" align="center">
+                3
+              </td>
+              <!-- <td class="service">2</td> -->
+              <td class="desc for-all-color-one">SGST</td>
+              <td class="unit for-all-color-one" style="text-align: center;"></td>
+              <td class="qty for-all-color-one" style="text-align: center;"></td>
+              <td class="total for-all-color-one" style="text-align: center;"></td>
+              <td class="total for-all-color-one" style="border-right: 0;" align="right">
+                <%= result.SGST %>
+              </td>
+            </tr>
+            <tr>
+              <td class="desc for-all-color-one" style="border-left: 0;" align="center">
+                4
+              </td>
+              <!-- <td class="service">4</td> -->
+              <td class="desc for-all-color-one">IGST</td>
+              <td class="unit for-all-color-one" style="text-align: center;"></td>
+              <td class="qty for-all-color-one" style="text-align: center;"></td>
+              <td class="total for-all-color-one" style="text-align: center;"></td>
+              <td class="total for-all-color-one" style="border-right: 0;" align="right">
+                <%= result.IGST %>
+              </td>
+            </tr>
+            <tr>
+              <td style="border-left: 0;"></td>
+              <td style="text-align: left; font-weight: 600;" class="heading-rounding">Rounding</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="counting for-all-color-one" style="border-right: 0;" align="right">
+                <%= result.rounding_off %>
+              </td>
+            </tr>
+            <tr>
+              <td style="border-left: 0;"></td>
+              <td style="text-align: left; font-weight: 600;" class="heading-rounding">Total</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="counting for-all-color-one" style="border-right: 0;" align="right">
+                <%= result.receivable_amount %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="" style="margin-top: 25px;">
+        <table style="border: 0; width: 100%;" width="100%">
+          <thead style="text-align: left;">
+            <tr>
+              <th style="width: 20%;text-align: left; border: 0; ">Amount (in Words): </th>
+              <th style="text-align: left; border: 0;"> <span>
+                  <%= amountWord %>
+                </span></th>
+                <th colspan="2" style="border-left: 0; border-top: 0; border-right: 0"></th>
+            </tr>
+            <tr>
+              <th style="width: 20%; text-align: left; border-left: 0;">Notes: </th>
+              <th style="text-align: left; border-right: 0;"> SAC Code : <span class="gray-heading-cls">998313</span></th>
+              <th colspan="2" style="border-left: 0; border-top: 0; border-right: 0"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr colspan="2"></tr>
+            <tr>
+              <td style="text-align: left; border: 0;" class="left-side-licence">Licence Start Date : </td>
+              <td style="text-align: left; border: 0;" class="left-side-licence">
+                <%= start_date %>
+              </td>
+              <td style="text-align: left; border: 0;" class="left-side-licence">Licence Duration :
+              </td>
+              <td style="text-align: left; border: 0;" class="left-side-licence">
+                <%= result.subcription_plan.type %>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: left; border: 0;" class="left-side-licence">Licence End Date : </td>
+              <td style="text-align: left; border: 0;" class="left-side-licence">
+                <%= end_date %>
+              </td>
+              <td colspan="2" style="border-left: 0; border-top: 0; border-bottom: 0; border-right: 0;"></td>
+            </tr>
+            <tr>
+              <td colspan="2" style="border-top: 0; border-left: 0; border-right: 0;">
+                TDS : <span class="gray-heading-cls">Service under
+                  94JA Technical Service @ 2%</span>
+              </td>
+              <td colspan="3" style="border-left: 0; border-top: 0; border-right: 0;"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <table style="border: 0; width: 100%;" width="100%">
+        <thead>
+          <tr>
+            <th style="text-align: left; border-top: 0; border-left: 0;">Bank Details:</th>
+            <th style=" border: 0;"><h5 style="font-weight: 600; text-align: right; border: 0; margin: 0;">Taskopad Solutions Private Limited</h5>
+              </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: left; border: 0;" class="left-side-licence">Taskopad solutions Private Limited</td>
+            <td rowspan="4" align="right" style="border-top: 0; border-right: 0; border-bottom: 0;"><img alt="logo" height="100" width="250"
+              src="https://invoice-creation.s3.ap-south-1.amazonaws.com/sign.jpg"></td>
+          </tr>
+          <tr>
+            <td style="text-align: left; border-left: 0;" class="left-side-licence"><span class="all-text-invoice-created">Account No
+                :</span> 423505000868</td>
+          </tr>
+          <tr>
+            <td style="text-align: left; border-left: 0;" class="left-side-licence"><span class="all-text-invoice-created">IFSC :</span>
+              ICIC0004235</td>
+          </tr>
+          <tr>
+            <td style="text-align: left; border-left: 0;" class="left-side-licence"><span class="all-text-invoice-created">Bank Name
+                :</span> ICICI Bank Ltd</td>
+          </tr>
+          <tr>
+            <td  class="left-side-licence" style="border-left: 0;"><span class="all-text-invoice-created">Branch
+                :</span> Makarba,Ahmedabad,Gujarat,India</td>
+                <td align="right" style="text-align: right; border: 0; border-left: 0;"><p style="margin: 0;">Authorized Signatory</p></td>
+          </tr>
+          <tr>
+            <td colspan="2" style="border-left: 0; border-right: 0; border-bottom: 0;">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    </main>
+
+  </div>
+
+</body>
+
+</html>

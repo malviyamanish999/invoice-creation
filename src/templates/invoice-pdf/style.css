@@ -1,0 +1,277 @@
+a {
+  color: #5D6975;
+  text-decoration: underline;
+}
+
+body {
+  position: relative;
+  width: 28cm;
+  margin: 0 auto;
+  background: #FFFFFF;
+  font-family: Arial, sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+  border: 1px solid #C9D6E6;
+}
+
+table th,
+table td {
+  text-align: center;
+}
+
+table th {
+  padding: 20px 30px 20px 30px;
+  color: #292D32;
+  font-weight: 700;
+  border-bottom: 1px solid #C1CED9;
+  white-space: nowrap;
+}
+
+table td {
+  padding: 20px;
+
+}
+
+table td.service,
+table td.desc {
+  vertical-align: middle;
+}
+
+table td.unit,
+table td.qty,
+table td.total {
+  font-size: 1.2em;
+}
+
+table td.grand {
+  border-top: 1px solid #5D6975;
+}
+
+footer {
+  color: #5D6975;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #C1CED9;
+  padding: 8px 0;
+  text-align: center;
+}
+
+.left-side h1,
+h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #292D32;
+  margin: 0;
+}
+
+.left-side {
+  float: left;
+  text-align: left;
+  margin: 0;
+}
+
+.right-side {
+  float: right;
+  margin: 0;
+}
+
+.main-header-portion {
+  margin: 18px 0 0px 0;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.right-side h6 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #909090;
+  margin: 0;
+}
+
+.left-side address {
+  color: #909090;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.right-side .amount {
+  font-weight: 600;
+  font-size: 14px;
+  color: #909090;
+}
+
+.portion-one-line {
+  display: flex;
+  align-items: center;
+}
+
+.gst-portion-same-cls p {
+  color: #292D32;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.gst-portion-same-cls span {
+  color: #909090;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.main-table-start:before {
+  content: '';
+  position: absolute;
+  display: block;
+  background: url(./images/taskopad-trasnparent.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  margin: 142px 0 0 0;
+}
+
+.main-table-start tbody tr {
+  border-bottom: 1px solid #DFDEDE;
+}
+
+.main-table-start tbody tr:last-child {
+  border-bottom: none;
+}
+
+.second-main-table tbody tr {
+  border-bottom: 1px solid #C9D6E5;
+}
+
+.second-main-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.main-table-start tbody tr td {
+  color: #909090;
+  font-weight: 400;
+}
+
+.rounding-number .counting {
+  color: #909090;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: end;
+}
+
+.rounding-number .heading-rounding {
+  color: #292D32;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.heading-notes {
+  font-weight: 700;
+}
+
+.left-side-licence {
+  color: #292D32;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.gray-heading-cls {
+  color: #909090;
+  font-size: 16px;
+  font-weight: 400 !important;
+}
+
+.heading-only-taskopad {
+  font-weight: 600;
+  color: #909090;
+  font-size: 14px;
+}
+
+.accounting-cls {
+  color: #292D32;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.accounting-gray {
+  color: #909090;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.right-side-border-add table thead tr th {
+  border-right: 1px solid #C9D6E6;
+}
+
+.right-side-border-add table td {
+  border-right: 1px solid #C9D6E6;
+}
+
+.payment-text h6 {
+  color: #292D32;
+  font-weight: 700;
+  font-size: 21px;
+  margin: 0;
+}
+
+@media only screen and (max-width: 1224px) {
+  body {
+    width: 18cm;
+  }
+
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+  .left-side h1,
+  h3 {
+    font-size: 21px;
+  }
+
+  .main-table-start:before {
+    height: 190px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    width: 9cm;
+  }
+
+  .main-table-start:before {
+    height: 97px;
+    margin: 150px 0 0 0;
+    top: initial;
+  }
+
+  .main-header-portion {
+    display: block;
+  }
+
+  .left-side {
+    float: inherit;
+  }
+
+  .right-side {
+    float: inherit;
+    margin-top: 23px;
+  }
+
+  .right-side .amount {
+    margin-top: 4px;
+  }
+}

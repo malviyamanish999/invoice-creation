@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invoice Creation Angular</title>
+  <link rel="stylesheet" href="style.css" media="all" />
+</head>
+
+<body>
+  <div class="main-header-portion">
+    <div class="left-side">
+      <h1>Tax Invoice</h1>
+    </div>
+    <div class="right-side">
+      <img alt="taskopad-logo" src="./images/taskopad-logo.png">
+    </div>
+  </div>
+  <div class="main-header-portion">
+    <div class="left-side">
+      <h3>Taskopad Solutions Private Limited</h3>
+      <address style="margin-top: 6px; font-style: normal;">
+        408, 4th Floor, Binali Complex,<br>
+        AEC Cross Road, Naranpura,<br>
+        Ahmedabad.380013<br>
+        Gujarat
+      </address>
+    </div>
+    <div class="right-side">
+      <h3>Words</h3>
+      <p class="amount">Word & Numbers</p>
+    </div>
+  </div>
+  <div class="main-header-portion">
+    <div class="left-side">
+      <div class="gst-portion-same-cls">
+        <p>GST No. &nbsp;&nbsp;&nbsp;<span>24AAHCT9200H1ZG</span></p>
+        <p>PAN NO. &nbsp;&nbsp;&nbsp;<span>AAHCT9200H</span></p>
+        <p>Invoice Date . &nbsp;&nbsp;&nbsp;<span>DD/ MM/ YYYY</span></p>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="gst-portion-same-cls">
+        <p>GST No. &nbsp;&nbsp;&nbsp;<span>24AAHCT9200H1ZG</span></p>
+        <p>State & State Code. &nbsp;&nbsp;&nbsp;<span>Words & Numbers</span></p>
+        <p>Invoice Number. &nbsp;&nbsp;&nbsp;<span>DD/ MM/ YYYY</span></p>
+      </div>
+    </div>
+  </div>
+  <main class="body-portion-cls" style="margin-top: 25px;">
+    <div class="main-table-start">
+      <table class="table table-responsive">
+        <caption>Invoice</caption>
+        <thead>
+          <tr>
+            <th class="desc">DESCRIPTION</th>
+            <th>QTY</th>
+            <th>RATE</th>
+            <th>DISC %</th>
+            <th>AMOUNT.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="desc"></td>
+            <td class="unit">Number</td>
+            <td class="qty">Number</td>
+            <td class="total">%</td>
+            <td class="total">Number</td>
+          </tr>
+          <tr>
+            <td class="desc">SGST</td>
+            <td class="unit"></td>
+            <td class="qty"></td>
+            <td class="total"></td>
+            <td class="total"></td>
+          </tr>
+          <tr>
+            <td class="desc">CGST</td>
+            <td class="unit"></td>
+            <td class="qty"></td>
+            <td class="total"></td>
+            <td class="total"></td>
+          </tr>
+          <tr>
+            <td class="desc">IGST</td>
+            <td class="unit"></td>
+            <td class="qty"></td>
+            <td class="total"></td>
+            <td class="total"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="second-main-table rounding-number table-responsive" style="margin-top: 25px;">
+      <table aria-hidden="true">
+        <tbody>
+          <tr>
+            <td style="text-align: left;" class="heading-rounding">Rounding</td>
+            <td class="counting">Number</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;" class="heading-rounding">Total</td>
+            <td class="counting">Number</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="second-main-table amount-cls-add notes-counting table-responsive" style="margin-top: 25px;">
+      <table aria-hidden="true">
+        <thead>
+          <tr>
+            <th style="text-align: left;">Amount (in Words): </th>
+            <th>Words</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: left;" class="heading-notes">Notes:</td>
+            <td style="text-align: left;" class="heading-notes">SAC Code : <span class="gray-heading-cls">998313</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left;" class="left-side-licence">Licence Start Date : <span
+                class="gray-heading-cls">DD / MM / YYYY</span></td>
+            <td style="text-align: left;" class="left-side-licence">Licence End Date : <span class="gray-heading-cls">DD
+                / MM / YYYY</span></td>
+          </tr>
+          <tr>
+            <td style="text-align: left;" class="left-side-licence">TDS : <span class="gray-heading-cls">Serivce under
+                94JA Technical Service @ 2%</span></td>
+            <td style="text-align: left;" class="left-side-licence">Licence Duration : <span
+                class="gray-heading-cls">Words</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="second-main-table right-side-border-add table-responsive"
+    style="margin-top: 25px; margin-bottom: 25px;">
+    <table aria-hidden="true">
+      <thead>
+        <tr>
+          <th style="text-align: left;">Bank Details: </th>
+          <th class="heading-only-taskopad">Taskopad Solutions Private Limited</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;" class="heading-only-taskopad">Taskopad solutions Private Limited</td>
+          <td style="text-align: left;" class="heading-only-taskopad">Authorized Signatory</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;" class="accounting-cls">Account No : <span
+              class="accounting-gray">423505000868</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;" class="accounting-cls">IFSC : <span class="accounting-gray">ICIC0004235</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left;" class="accounting-cls">Bank Name : <span class="accounting-gray">ICICI Bank
+              Ltd</span></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;" class="accounting-cls">Branch : <span class="accounting-gray">Makarba,
+              Ahmedabad,Gujarat,India</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </main>
+</body>
+
+</html>

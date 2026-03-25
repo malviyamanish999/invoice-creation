@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quotation</title>
+  <style>
+    a {
+      color: #5D6975;
+      text-decoration: underline;
+    }
+
+    .new-account-cls-add {
+      float: left;
+      display: flex;
+      justify-content: flex-start;
+      color: #292D32;
+      font-weight: 600;
+      font-size: 14px;
+      margin-right: auto;
+    }
+
+    .all-text-invoice-created {
+      color: #292D32;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    body {
+      position: relative;
+      width: 28cm;
+      margin: 0 auto;
+      background: #FFFFFF;
+      font-family: Arial, sans-serif;
+      font-family: Arial;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin-bottom: 20px;
+      border: 1px solid #C9D6E6;
+    }
+
+    table th,
+    table td {
+      text-align: center;
+    }
+
+    table th {
+      padding: 20px 30px 20px 30px;
+      color: #292D32;
+      font-weight: 700;
+      border-bottom: 1px solid #C1CED9;
+      white-space: nowrap;
+    }
+
+    table td {
+      padding: 20px;
+
+    }
+
+    table td.service,
+    table td.desc {
+      vertical-align: middle;
+    }
+
+    table td.unit,
+    table td.qty,
+    table td.total {
+      font-size: 1.2em;
+    }
+
+    table td.grand {
+      border-top: 1px solid #5D6975;
+    }
+
+    footer {
+      color: #5D6975;
+      width: 100%;
+      height: 30px;
+      position: absolute;
+      bottom: 0;
+      border-top: 1px solid #C1CED9;
+      padding: 8px 0;
+      text-align: center;
+    }
+
+    .left-side h1,
+    h3 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #292D32;
+      margin: 0;
+    }
+
+    .left-side {
+      float: left;
+      text-align: left;
+      margin: 0;
+      width: 50%;
+    }
+
+    .right-side {
+      float: right;
+      margin: 0;
+    }
+
+    .main-header-portion {
+      margin: 18px 0 0px 0;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+    }
+
+    .right-side h6 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #909090;
+      margin: 0;
+    }
+
+    .left-side address {
+      color: #909090;
+      line-height: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .right-side .amount {
+      font-weight: 600;
+      font-size: 14px;
+      color: #909090;
+    }
+
+    .portion-one-line {
+      display: flex;
+      align-items: center;
+    }
+
+    .gst-portion-same-cls p {
+      color: #292D32;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .gst-portion-same-cls span {
+      color: #909090;
+      font-weight: 400;
+      font-size: 16px;
+    }
+
+    .main-table-start:before {
+      content: '';
+      position: absolute;
+      display: block;
+      background: url(https://s3.ap-south-1.amazonaws.com/invoice-creation-assets/pdf/filesadd.png);
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 300px;
+      left: 39%;
+      right: 50%;
+      margin: 142px auto 0 auto;
+    }
+
+    .main-table-start tbody tr {
+      border-bottom: 1px solid #DFDEDE;
+    }
+
+    .main-table-start tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .second-main-table tbody tr {
+      border-bottom: 1px solid #C9D6E5;
+    }
+
+    .second-main-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .main-table-start tbody tr td {
+      color: #909090;
+      font-weight: 400;
+    }
+
+    .rounding-number .counting {
+      color: #909090;
+      font-weight: 400;
+      font-size: 16px;
+      text-align: end;
+    }
+
+    .rounding-number .heading-rounding {
+      color: #292D32;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .heading-notes {
+      font-weight: 700;
+    }
+
+    .left-side-licence {
+      color: #292D32;
+      font-weight: 400;
+      font-size: 16px;
+    }
+
+    .for-all-color-one {
+      color: #292D32 !important;
+    }
+
+    .gray-heading-cls {
+      color: #909090;
+      font-size: 16px;
+      font-weight: 400 !important;
+    }
+
+    .accounting-gray {
+      color: #909090;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 20px;
+      display: block;
+      font-style: normal;
+      line-height: 10px;
+    }
+
+    .right-side-border-add table thead tr th {
+      border-right: 1px solid #C9D6E6;
+    }
+
+    .right-side-border-add table td {
+      border-right: 1px solid #C9D6E6;
+    }
+
+    .gray-colo-cls {
+      color: #909090;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .payment-text h6 {
+      color: #292D32;
+      font-weight: 700;
+      font-size: 21px;
+      margin: 0;
+    }
+
+    .same-class-paragraph {
+      color: #909090;
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    .bold-text-cls {
+      color: #292D32;
+      font-weight: 700;
+      font-size: 16px;
+      margin: 6px 0px 6px 0px;
+      padding: 0;
+    }
+
+    @media only screen and (max-width: 1224px) {
+      body {
+        width: 18cm;
+      }
+
+      .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+      }
+
+      .left-side h1,
+      h3 {
+        font-size: 21px;
+      }
+
+      .main-table-start:before {
+        height: 190px;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      body {
+        width: 9cm;
+      }
+
+      .main-table-start:before {
+        height: 97px;
+        margin: 150px 0 0 0;
+        top: initial;
+      }
+
+      .main-header-portion {
+        display: block;
+      }
+
+      .left-side {
+        float: inherit;
+      }
+
+      .right-side {
+        float: inherit;
+        margin-top: 23px;
+      }
+
+      .right-side .amount {
+        margin-top: 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="row main-header-portion" style="margin-bottom: 30px; padding-bottom: 30px;">
+    <div class="col-lg-6 left-side" style="width: 70%; float: left;">
+      <div class="left-side">
+        <!-- <h1 style="font-size: 20px;" class="mb-0">Invoice</h1> -->
+      </div>
+    </div>
+    <div class="col-lg-6 right-side" style="line-height: 40px;">
+      <div class="right-side">
+        <img src="https://invoice-creation-assets.s3.ap-south-1.amazonaws.com/pdf/taskopad-logo.png">
+      </div>
+    </div>
+  </div>
+  <div >
+    <div>
+        <p>
+          To, <br>
+          <%= result.customer.client_name %><br>
+          <%= result.customer.company_name %> <br>
+          India <br><br>
+          Kind Attn: Mr.<%= result.customer.client_name %> <br><br>
+          Sub: Proposal for Task & Project Management Software (SaaS base) <br><br>
+          Dear Sir, <br><br>
+          This is with reference to your requirement of Task & Project Management Software. Here please find our Company Profile and Commercial Proposal for your kind perusal. <br><br>
+          Since 2011, our directors have been running business in the Software Development & Financial Service sector and started one new product as “TaskOPad” for Task & Project Management Solutions for businesses, Educational institutes & professionals. We help in simplifying your work, minimizing your time to increase productivity. We’re on a mission to make people love software in many cases for the first time ever. The entire TaskOPad team is highly passionate about creating software that changes people’s lives. <br><br>
+          TaskOPad is a fast growing startup providing solutions for secure, reliable and stable communication software for Internal & External users / clients. Our server and data are stored in the world's most secure & trustable site “Amazon Web Services”. Our software developer partner Solution Analysts has an expert developer team for technical development and we are giving commitment to our client for user friendly software and updating quarter to quarter. Our Application is available on Web, Android and on iOS platform too. <br><br>
+          Our expert team will provide online support by 10 AM to 7 PM IST time. In case of any information/ clarification please feel free to contact us. <br><br>
+          Thanking you and assuring you of our best services at all times. <br><br>
+          Sincerely, <br>
+          For TaskPad Solutions Pvt Ltd. <br><br>
+          Simran Jain <br>
+          Business Development Manager <br>
+          +91-9898593359
+        </p><br><br>
+        <br><br>
+        <br><br>
+    </div>
+    <div class="col-lg-6 right-side" style="line-height: 40px;">
+      <div class="right-side">
+        <!-- <img src="https://invoice-creation-assets.s3.ap-south-1.amazonaws.com/pdf/taskopad-logo.png"> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="row main-header-portion" style="margin-bottom: 30px; padding-bottom: 30px;">
+    <div class="col-lg-6 left-side" style="width: 70%; float: left;">
+      <div class="left-side">
+        <h1 style="font-size: 20px;" class="mb-0">Quotation</h1>
+      </div>
+    </div>
+    <div class="col-lg-6 right-side" style="line-height: 40px;">
+      <div class="right-side">
+        <img src="https://invoice-creation-assets.s3.ap-south-1.amazonaws.com/pdf/taskopad-logo.png">
+      </div>
+    </div>
+  </div>
+
+  <div class="row main-header-portion" style="margin-bottom: 30px; padding-bottom: 30px;">
+    <div class="col-lg-6 left-side" style="width: 70%; float: left;">
+      <h3 style="font-size: 20px;">Taskopad Solutions Private Limited</h3>
+      <address style="margin-top: 6px; font-style: normal;">
+        408, 4th Floor, Binali Complex,<br>
+        AEC Cross Road, Naranpura,<br>
+        Ahmedabad.380013<br>
+        Gujarat
+      </address>
+    </div>
+    <div class="col-lg-6 right-side" style="line-height: 40px; width: 30%;">
+      <div class="gst-portion-same-cls">
+        <h3 style="font-size: 20px;">
+          <%= result.customer.company_name %>
+        </h3>
+        <address style="  color: #909090;
+        line-height: 24px;
+        font-size: 14px;
+        font-weight: 600; font-style: normal;">
+          <%= result.customer.address1 %>,<br>
+            <%= result.customer.address1 %> &nbsp; <%= result.customer.address2 %>,<br>
+                <%= result.customer.city %> &nbsp; <%= result.customer.pincode %>,<br>
+                    <%= result.customer.state %>
+        </address>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 30px; padding-top: 30px;">
+    <div class="col-lg-6" style="width: 70%; float: left;">
+      <p class="bold-text-cls">GST No. &nbsp;&nbsp;&nbsp;<span class="same-class-paragraph">
+          24AAHCT9200H1ZG
+        </span></p>
+      <p class="bold-text-cls">PAN No. &nbsp;&nbsp;&nbsp;<span class="same-class-paragraph">
+         AAHCT9200H
+        </span></p>
+      <p class="bold-text-cls">Quotation Date . &nbsp;&nbsp;&nbsp;<span class="same-class-paragraph">
+        <%= start_date %>
+        </span></p>
+    </div>
+    <div class="col-lg-6" style="width: 30%; float: right;">
+      <p class="bold-text-cls">GST No. &nbsp;&nbsp;&nbsp;<span class="same-class-paragraph">
+          <%= result.customer.gst_no %>
+        </span></p>
+      <p class="bold-text-cls">PAN No. &nbsp;&nbsp;&nbsp;<span class="same-class-paragraph">
+          <%= result.customer.pan_no %>
+        </span></p>
+      <p class="bold-text-cls">Quotation No . &nbsp;&nbsp;&nbsp;<span class="same-class-paragraph">
+          <%= result.quotation_no %>
+        </span></p>
+    </div>
+  </div>
+
+  <div class="main-header-portion">
+    <div class="left-side">
+      <div class="gst-portion-same-cls">
+
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="gst-portion-same-cls">
+
+      </div>
+    </div>
+  </div>
+
+  <main class="body-portion-cls" style="margin-top: 25px;">
+    <div class="main-table-start">
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <!-- <th class="service">Sr. #</th> -->
+            <th class="desc">DESCRIPTION</th>
+            <th>QTY</th>
+            <th>RATE</th>
+            <th>DISC %</th>
+            <th>AMOUNT.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!-- <td class="service">1</td> -->
+            <td class="desc for-all-color-one">
+              <%= result.description.description %>
+            </td>
+            <td class="qty for-all-color-one">
+              <%= result.user %>
+            </td>
+            <td class="rate for-all-color-one">
+              <%= result.subcription_plan.rate %>
+            </td>
+            <td class="disc for-all-color-one">
+              <%= result.discount %>
+            </td>
+            <td class="total for-all-color-one">
+              <%= amount %>
+            </td>
+          </tr>
+          <tr>
+            <!-- <td class="service">3</td> -->
+            <td class="desc for-all-color-one">CGST</td>
+            <td class="unit for-all-color-one"></td>
+            <td class="qty for-all-color-one"></td>
+            <td class="total for-all-color-one"></td>
+            <td class="total for-all-color-one">
+              <%= result.CGST %>
+            </td>
+          </tr>
+          <tr>
+            <!-- <td class="service">2</td> -->
+            <td class="desc for-all-color-one">SGST</td>
+            <td class="unit for-all-color-one"></td>
+            <td class="qty for-all-color-one"></td>
+            <td class="total for-all-color-one"></td>
+            <td class="total for-all-color-one">
+              <%= result.SGST %>
+            </td>
+          </tr>
+          <tr>
+            <!-- <td class="service">4</td> -->
+            <td class="desc for-all-color-one">IGST</td>
+            <td class="unit for-all-color-one"></td>
+            <td class="qty for-all-color-one"></td>
+            <td class="total for-all-color-one"></td>
+            <td class="total for-all-color-one">
+              <%= result.IGST %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="second-main-table rounding-number table-responsive" style="margin-top: 25px;">
+      <table>
+        <tbody>
+          <tr>
+            <td style="text-align: left;" class="heading-rounding">Rounding</td>
+            <td class="counting for-all-color-one">
+              <%= result.rounding_off %>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left;" class="heading-rounding">Total</td>
+            <td class="counting for-all-color-one">
+              <%= result.receivable_amount %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div><br><br><br><br>
+    <div class="second-main-table amount-cls-add notes-counting table-responsive" style="margin-top: 25px;">
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: left;">Amount (in Words): <span><%= amountWord %></span></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <th>
+          <td style="position: absolute; left: 0; padding: 10px 10px 10px 25px;">SAC Code : <span
+              class="gray-heading-cls">998313</span></td>
+          </th>
+          <tr>
+            <td style="text-align: left;" class="left-side-licence">Licence Start Date : <span class="gray-heading-cls">
+                  <%= start_date %>
+              </span></td>
+            <td style="text-align: left;" class="left-side-licence">Licence End Date : <span class="gray-heading-cls">
+                <%= end_date %>
+              </span></td>
+          </tr>
+          <tr>
+            <td style="text-align: left;" class="left-side-licence">TDS : <span class="gray-heading-cls">Service under
+                94JA Technical Service @ 2%</span></td>
+            <td style="text-align: left;" class="left-side-licence">Licence Duration : <span class="gray-heading-cls">
+                <%= result.subcription_plan.type %>
+              </span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div><br><br>
+    <div class="payment-text">
+      <h6>Service Agreement</h6>
+    </div>
+    <div class="second-main-table right-side-border-add table-responsive"
+      style="margin-top: 25px; margin-bottom: 25px;">
+      <table>
+        <tbody>
+          <tr>
+            <td style="text-align: left;">1</td>
+            <td style="text-align: left;">10:00AM to 7:00PM technical support online Only.</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">2</td>
+            <td style="text-align: left;">Validate for <%= result.validate_for %>.</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">3</td>
+            <td style="text-align: left;">Use through Website, Android Mobile & IOS Mobile.</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">4</td>
+            <td style="text-align: left;">We are offering 5GB storage space to each user, after that Rs.20 for 1GB /per
+              month.</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">5</td>
+            <td style="text-align: left;">This proposal is valid up to next  <%= result.calendar_days %> calendar days</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><br><br><br><br><br><br>
+    <div class="payment-text">
+      <h6>Payment Terms and Conditions</h6>
+    </div>
+    <div class="second-main-table right-side-border-add table-responsive"
+      style="margin-top: 25px; margin-bottom: 25px;">
+      <table>
+        <tbody>
+          <tr>
+            <td style="text-align: left;">1</td>
+            <td style="text-align: left;">Payment Terms: Yearly advance as per Invoice date.</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">2</td>
+            <td style="text-align: left;">18% GST Added.</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;">3</td>
+            <td style="text-align: left;">Once service started Refund not allowed.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="second-main-table amount-cls-add notes-counting table-responsive right-side-border-add" style="margin-top: 25px;">
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: left;">Bank Details:</th>
+            <th>Taskopad Solutions Private Limited</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: left;" class="left-side-licence">Taskopad solutions Private Limited</td>
+            <td style="text-align: right; float: right; margin-right: 78px; border-right: none !important;" class="left-side-licence">Authorized Signatory</td>
+          </tr>
+          <tr>
+            <td style="text-align: left;" class="left-side-licence"><span class="all-text-invoice-created">Account No :</span> 423505000868</td>
+            <td style="text-align: left;" class="left-side-licence"></td>
+          </tr>
+          <tr>
+            <td style="text-align: left;" class="left-side-licence"><span class="all-text-invoice-created">IFSC :</span> ICIC0004235</td>
+            <td style="text-align: left;" class="left-side-licence"></td>
+          </tr>
+          <tr>
+            <td style="text-align: left;" class="left-side-licence"><span class="all-text-invoice-created">Bank Name :</span> ICICI Bank Ltd</td>
+            <td style="text-align: left;" class="left-side-licence"></td>
+          </tr>
+          <tr>
+            <td style="text-align: left;" class="left-side-licence"><span class="all-text-invoice-created">Branch :</span> Makarba,Ahmedabad,Gujarat,India</td>
+            <td style="text-align: left;" class="left-side-licence"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- <div class="second-main-table right-side-border-add"
+      style="margin-top: 25px; margin-bottom: 25px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Bank Details: </th>
+            <th class="heading-only-taskopad">Taskopad Solutions Private Limited</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width: 50%;" class="heading-only-taskopad">Taskopad solutions Private Limited
+            </td>
+            <td style="width: 70%;" class="heading-only-taskopad">Authorized Signatory</td>
+          </tr>
+          <tr>
+            <td class="new-account-cls-add" style="width: 92.5%;">Account No : <span
+                class="gray-colo-cls">423505000868</span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="new-account-cls-add" style="width: 92.5%;">IFSC : <span
+                class="gray-colo-cls">ICIC0004235</span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="new-account-cls-add" style="width: 92.5%;">Bank Name : <span
+                class="gray-colo-cls">ICICI Bank Ltd</span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="new-account-cls-add" style="width: 92.5%;">Branch : <span
+                class="gray-colo-cls">Makarba,Ahmedabad,Gujarat,India</span></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+
+    </div>
+  </main>
+</body>
+
+</html>

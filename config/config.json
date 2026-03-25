@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "test",
+    "password": "Admin@123",
+    "database": "invoice_creation",
+    "host": "65.1.69.62",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "test",
+    "password": "Admin@123",
+    "database": "invoice_creation",
+    "host": "65.1.69.62",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "test",
+    "password": "Admin@123",
+    "database": "invoice_creation",
+    "host": "65.1.69.62",
+    "dialect": "mysql"
+  }
+}
