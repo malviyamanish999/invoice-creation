@@ -119,6 +119,6 @@ return paymentRecord.create(data);
 ## LICENSE
 ISC
 
-##### AUTHOR: [ Solution Analysts ]
-##### MAINTAINER: [ Charmi Rathod ]
+##### AUTHOR: [ Manish Malviya ]
+##### MAINTAINER: [ Manish Malviya  ]
 # invoice-creation
